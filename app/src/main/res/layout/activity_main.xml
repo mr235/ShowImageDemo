@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mr235.showimagedemo.MainActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UIL"
+        android:id="@+id/uil"
+        android:layout_alignParentLeft="true"
+        android:textAllCaps="false"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="glide"
+        android:id="@+id/glide"
+        android:textAllCaps="false"
+        android:layout_below="@+id/uil"
+        android:layout_alignLeft="@+id/uil"
+        android:layout_alignStart="@+id/uil"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="picasso"
+        android:id="@+id/picasso"
+        android:textAllCaps="false"
+        android:layout_below="@+id/glide"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fresco"
+        android:id="@+id/fresco"
+        android:textAllCaps="false"
+        android:layout_below="@+id/picasso"
+        android:layout_alignLeft="@+id/picasso"
+        android:layout_alignStart="@+id/picasso"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="volley"
+        android:id="@+id/volley"
+        android:layout_below="@+id/fresco"
+        android:layout_alignLeft="@+id/fresco"
+        android:layout_alignStart="@+id/fresco"/>
+</RelativeLayout>

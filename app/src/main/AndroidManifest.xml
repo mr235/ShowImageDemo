@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.mr235.showimagedemo">
+
+    <!-- Include following permission if you load images from Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Include following permission if you want to cache images on SD card -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".UILActivity" android:label="UIL">
+        </activity>
+        <activity android:name=".GlideActivity" android:label="Glide">
+        </activity>
+        <activity android:name=".PicassoActivity" android:label="Picasso">
+        </activity>
+        <activity android:name=".FrescoActivity" android:label="Fresco">
+        </activity>
+        <activity android:name=".VolleyActivity" android:label="Volley">
+        </activity>
+    </application>
+
+</manifest>
