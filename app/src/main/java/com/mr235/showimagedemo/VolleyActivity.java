@@ -3,7 +3,6 @@ package com.mr235.showimagedemo;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.mr235.showimagedemo.adapter.PicassoAdapter;
 import com.mr235.showimagedemo.adapter.VolleyAdapter;
 
 public class VolleyActivity extends BaseActivity {

@@ -10,11 +10,9 @@ import android.view.ViewGroup;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.mr235.showimagedemo.Constants;
 import com.mr235.showimagedemo.R;
 import com.mr235.showimagedemo.util.AppUtils;
-import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 
 /**
  * Created by Administrator on 2016/6/29.

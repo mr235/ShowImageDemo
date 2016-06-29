@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.mr235.showimagedemo.Constants;
 import com.mr235.showimagedemo.R;
 import com.squareup.picasso.Picasso;

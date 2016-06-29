@@ -3,7 +3,6 @@ package com.mr235.showimagedemo;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.mr235.showimagedemo.adapter.GlideAdapter;
 import com.mr235.showimagedemo.adapter.PicassoAdapter;
 
 public class PicassoActivity extends BaseActivity {

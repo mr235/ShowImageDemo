@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.mr235.showimagedemo.adapter.FrescoAdapter;
-import com.mr235.showimagedemo.adapter.GlideAdapter;
 
 public class FrescoActivity extends BaseActivity {
 
