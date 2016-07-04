@@ -17,6 +17,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    productFlavors {
+        def flavors = initFlavors()
+        flavors.each { flavor ->
+            println("$flavor".toLowerCase().capitalize())
+            "$flavor" {
+                manifestPlaceholders = [UMENG_CHANNEL_VALUE : flavor]
+            }
+        }
+    }
+
+}
+
+def initFlavors() {
+    def flavors = []
+    flavors.add("WANDOUJIA")
+
+    return flavors
 }
 
 dependencies {

@@ -13,7 +13,7 @@ import com.mr235.showimagedemo.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 /**
  * Created by Administrator on 2016/6/29.
@@ -33,11 +33,11 @@ public class UilAdapter extends RecyclerView.Adapter<UilAdapter.ViewHolder> {
 //				.preProcessor(...)
 //		.postProcessor(...)
 //		.extraForDownloader(...)
-				.considerExifParams(false) // default
+				.considerExifParams(true) // default
 				.imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2) // default
-				.bitmapConfig(Bitmap.Config.ARGB_8888) // default
+				.bitmapConfig(Bitmap.Config.ARGB_4444) // default
 //				.decodingOptions(...)
-				.displayer(new SimpleBitmapDisplayer()) // default
+				.displayer(new FadeInBitmapDisplayer(250)) // default
 				.handler(new Handler()) // default
 				.build();
 	}

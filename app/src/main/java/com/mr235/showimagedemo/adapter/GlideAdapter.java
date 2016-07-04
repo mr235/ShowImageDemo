@@ -1,5 +1,6 @@
 package com.mr235.showimagedemo.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mr235.showimagedemo.Constants;
 import com.mr235.showimagedemo.R;
 
@@ -27,6 +29,7 @@ public class GlideAdapter extends RecyclerView.Adapter<GlideAdapter.ViewHolder> 
 
 	@Override
 	public void onBindViewHolder(ViewHolder holder, int position) {
+		Context context = holder.itemView.getContext();
 		String url = Constants.PIC_BIG[position];
 
 		Glide.with(holder.itemView.getContext())
@@ -34,6 +37,9 @@ public class GlideAdapter extends RecyclerView.Adapter<GlideAdapter.ViewHolder> 
 				.centerCrop()
 				.placeholder(R.drawable.ic_empty)
 				.crossFade()
+				.thumbnail(0.1f)
+				.skipMemoryCache(false)
+				.diskCacheStrategy(DiskCacheStrategy.ALL)
 				.into(holder.mImageView);
 	}
 
