@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mr235.showimagedemo.Constants;
 import com.mr235.showimagedemo.R;
+import com.mr235.showimagedemo.util.AppUtils;
 
 /**
  * Created by Administrator on 2016/6/29.
@@ -41,7 +43,18 @@ public class GlideAdapter extends RecyclerView.Adapter<GlideAdapter.ViewHolder> 
 				.skipMemoryCache(false)
 				.diskCacheStrategy(DiskCacheStrategy.ALL)
 				.into(holder.mImageView);
+		holder.mImageView.setTag(url);
+		holder.mImageView.setOnClickListener(clickListener);
 	}
+
+	private View.OnClickListener clickListener = new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			String url = (String) v.getTag();
+			AppUtils.copy(v.getContext(), url);
+			Toast.makeText(v.getContext(), "图片地址已复制", Toast.LENGTH_SHORT).show();
+		}
+	};
 
 	@Override
 	public int getItemCount() {

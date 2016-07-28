@@ -7,9 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.mr235.showimagedemo.Constants;
 import com.mr235.showimagedemo.R;
+import com.mr235.showimagedemo.util.AppUtils;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
@@ -52,8 +54,21 @@ public class UilAdapter extends RecyclerView.Adapter<UilAdapter.ViewHolder> {
 
 	@Override
 	public void onBindViewHolder(ViewHolder holder, int position) {
-		ImageLoader.getInstance().displayImage(Constants.PIC_BIG[position], holder.mImageView, options);
+		String url = Constants.PIC_BIG[position];
+		ImageLoader.getInstance().displayImage(url, holder.mImageView, options);
+
+		holder.mImageView.setTag(url);
+		holder.mImageView.setOnClickListener(clickListener);
 	}
+
+	private View.OnClickListener clickListener = new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			String url = (String) v.getTag();
+			AppUtils.copy(v.getContext(), url);
+			Toast.makeText(v.getContext(), "图片地址已复制", Toast.LENGTH_SHORT).show();
+		}
+	};
 
 	@Override
 	public int getItemCount() {

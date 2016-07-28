@@ -25,4 +25,15 @@ public class AppUtils {
 		}
 		return mQueue;
 	}
+
+	public static void copy(Context context, String content) {
+		if (android.os.Build.VERSION.SDK_INT > 11) {
+			// 得到剪贴板管理器
+			android.content.ClipboardManager cmb = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+			cmb.setText(content);
+		} else {
+			android.text.ClipboardManager cmb = (android.text.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+			cmb.setText(content);
+		}
+	}
 }
